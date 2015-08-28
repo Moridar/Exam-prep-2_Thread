@@ -1,0 +1,22 @@
+Threads kan sammenlignes med hjerner.
+Der er både med fordel og ulemper at have flere hjerner.
+
+Man bruger det når man vil have flere ting beregnet samtidigt, parrallelt og separteret
+Et program kan køre hurtigere vha. dette
+
+Race condition problem er en af ulemperne ved Threads, et enkelt eksempel er
+når A skal lægge 5 til x, og B skal trække 5 fra x.
+A og B tjekker samtidigt at x = 0.
+Så A sætter x = 5, B sætter derefter x = -5.
+Dermed er x = -5.
+
+Dette kan undgås ved lock eller synchronized metoder.
+Lock fungerer sådan at A låser x, således de andre, bl.a. B, må vente med at prøve og ændre x, 
+indtil x bliver frigjort af A.
+
+Synchronized metoder, man definerer de metoderne, der kan være hinanden sammenstødende, 
+sychronnized metoder, så der kan kun køres en synchronized metod ad gangen. 
+
+
+Da selve GUI er en thread, vil GUI fryses når det skal beregne noget der tager tid, man kan flytte
+beregningerne ovre til en anden Thread, så GUI ikke fryses.
